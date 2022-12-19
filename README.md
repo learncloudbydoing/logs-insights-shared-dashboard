@@ -1,2 +1,6 @@
-# logs-insights-shared-dashboard
-A project that analyses API Gateway logs with Logs Insights and a shared dashboard.
+# ANALYSE YOUR LOGS WITH CLOUDWATCH SHARED DASHBOARD
+
+This repository groups artefacts used on the Youtube video: 
+
+## Project Overview
+<img src="./slides.001.png"  />
