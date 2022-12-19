@@ -1,0 +1,16 @@
+fields @timestamp, @message
+| parse @message "(*)" as id
+| stats count_distinct(id) by bin(1d)
+
+
+fields @message 
+| parse @message "(*) *: *, *" as id, msg, method, rest
+| filter msg like "HTTP Method"
+| stats count(method) by method
+
+
+fields @message 
+| parse @message "(*) *: *" as id, msg, result
+| filter msg like "Method completed with status"
+| filter result = 200
+| count_distinct(id) by bin(1d)
